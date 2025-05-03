@@ -121,3 +121,16 @@ body{
     z-index: 2;
     background: linear-gradient(to right, #030b17 80%, #0c111b00);
 }
+.movie-title{
+    padding-left: 50px;
+    text-transform: capitalize;
+    margin-top: 80px;
+
+}
+.movie-info{
+    width: 80%;
+    line-height: 30px;
+    padding-left: 50px;
+    margin-top: 34px;
+    opacity: 0.8;
+}
