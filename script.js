@@ -10,13 +10,13 @@ const createslider =()=>{
         sliderindex=0;
     }
     //creating dom elements
-    let slide = document.createElement('div');
-    let imgelement = document.createElement('img');
-    let content = document.createElement('div');
-    let h1= document.createElement('h1');
-    let p = document.createElement('p');
+    let slide = document.createElement("div");
+    let imgelement = document.createElement("img");
+    let content = document.createElement("div");
+    let h1= document.createElement("h1");
+    let p = document.createElement("p");
 
-    imgelement.appendChild(document.createTextNode(''));
+    imgelement.appendChild(document.createTextNode(""));
     h1.appendChild(document.createTextNode(movies[sliderindex].name));
     p.appendChild(document.createTextNode(movies[sliderindex].des));
     content.appendChild(h1);
@@ -31,16 +31,16 @@ const createslider =()=>{
 
     // class names
 
-    slide.className = 'slider';
-    content.classList = 'slide-content';
-    h1.className = 'movie-title';
-    p.className = 'movie-info';
+    slide.className = "slider";
+    content.className = "slide-content";
+    h1.className = "movie-title";
+    p.className = "movie-info";
 
 
     slider.push(slide);
 
-    if(slider.image){
-        slider[0].style.marginLeft =  'calc(-${100*(slider.length -2)}% - ${30*(slider.length -2)}px)';
+    if(slider.length){
+        slider[0].style.marginLeft =  `calc(-${100*(slider.length -2)}% - ${30*(slider.length -2)}px)`;
     }
 }
 for(let i=0; i<3; i++){
@@ -49,4 +49,20 @@ for(let i=0; i<3; i++){
 
 setInterval(()=>{
     createslider();
-},300)
+},3000);
+
+
+//video playing
+
+const videoCards= document.querySelectorAll(".video-card");
+
+videoCards.forEach(item =>{
+    item.addEventListener("mouseover",()=>{
+        let video = item.children[1];
+        video.play();
+    });
+    item.addEventListener("mouseleave",()=>{
+        let video = item.children[1];
+        video.pause();
+    });
+});
